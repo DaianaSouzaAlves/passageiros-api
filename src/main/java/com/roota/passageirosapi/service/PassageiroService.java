@@ -61,7 +61,6 @@ public class PassageiroService {
 
     //Procurar pessoas por Id
     public PassageiroResponseDTO buscarPorID(Long id) {
-
         Passageiro passageiro = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Passageiro não encontrado"));
 
@@ -80,6 +79,24 @@ public class PassageiroService {
             throw new RuntimeException("Passageiro não encontrado");
         }
         repository.deleteById(id);
+    }
+
+    //Atualizar dados
+    public PassageiroResponseDTO atualizar(Long id, PassageiroRequestDTO dto) {
+        Passageiro passageiro = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Passageiro não encontrado"));
+        passageiro.setNome(dto.getNome());
+        passageiro.setEmail(dto.getEmail());
+        passageiro.setMatricula(dto.getMatricula());
+
+        Passageiro atualizado = repository.save(passageiro);
+
+        return new PassageiroResponseDTO(
+                atualizado.getId(),
+                passageiro.getNome(),
+                passageiro.getEmail(),
+                passageiro.getMatricula()
+        );
     }
 
 

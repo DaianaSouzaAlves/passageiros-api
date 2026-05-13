@@ -1,6 +1,5 @@
 package com.roota.passageirosapi.dto;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
@@ -10,7 +9,6 @@ public class PassageiroRequestDTO {
     private String nome;
 
     @Email(message = "Email inválido")
-    @Column(unique = true)
     private String email;
 
     @NotBlank(message = "Matrícula é obrigatória")

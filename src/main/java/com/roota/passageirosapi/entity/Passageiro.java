@@ -12,12 +12,12 @@ public class Passageiro {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotBlank (message = "Nome é orbigatório")
     private Long id;
 
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
 
+    @NotBlank(message = "Email é obrigatório")
     @Email(message = "Email inválido")
     @Column(unique = true)
     private String email;

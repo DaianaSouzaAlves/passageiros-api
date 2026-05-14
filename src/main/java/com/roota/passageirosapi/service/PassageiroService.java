@@ -55,7 +55,7 @@ public class PassageiroService {
                         passageiro.getEmail(),
                         passageiro.getMatricula()
                 ))
-        .collect(Collectors.toList());
+                .collect(Collectors.toList());
     }
 
 
@@ -100,12 +100,14 @@ public class PassageiroService {
     }
 
 
-    //Procurar usando o nome
+    //Procurar por nome
     public List<PassageiroResponseDTO> buscarPorNome(String nome) {
 
         List<Passageiro> passageiros =
                 repository.findByNomeContainingIgnoreCase(nome);
-
+        if (passageiros.isEmpty()) {
+            throw new RuntimeException("Passageiro não encontrado");
+        }
         return passageiros.stream()
                 .map(passageiro -> new PassageiroResponseDTO(
                         passageiro.getId(),

@@ -8,14 +8,15 @@ public class PassageiroRequestDTO {
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
 
+    @NotBlank(message = "Email é obrigatório")
     @Email(message = "Email inválido")
     private String email;
 
-    @NotBlank(message = "Matrícula é obrigatória")
     private String matricula;
 
     //Construtores
-    public PassageiroRequestDTO () {}
+    public PassageiroRequestDTO() {
+    }
 
     public PassageiroRequestDTO(String nome, String email, String matricula) {
         this.nome = nome;

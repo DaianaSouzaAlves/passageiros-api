@@ -17,11 +17,11 @@ Projeto desenvolvido com Java Spring Boot para gerenciamento de passageiros
 - Documentação com Swagger
 - DTOs para entrada e saída de dados  
 
-## Documentação da API
+## Como executar
+1. Clonar o projeto
+2. Configurar banco de dados
+3. Executar aplicação
+4. Acessar Swagger
 
-Swagger disponível em:
-
+## Swagger
 http://localhost:8080/swagger-ui/index.html
-
-## Status
-Em desenvolvimento

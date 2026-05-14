@@ -1,32 +1,24 @@
 package com.roota.passageirosapi.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Passageiro {
-    /*
-    Atributos e validações
-    Matrícula em String pois pode haver zeros na frente ou letras
-     */
+    //Atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Nome é obrigatório")
     private String nome;
 
-    @NotBlank(message = "Email é obrigatório")
-    @Email(message = "Email inválido")
     @Column(unique = true)
     private String email;
 
-    @NotBlank(message = "Matrícula é obrigatória")
     private String matricula;
 
     //Construtor
-    public Passageiro() {}
+    public Passageiro() {
+    }
 
     public Passageiro(Long id, String nome, String email, String matricula) {
         this.id = id;

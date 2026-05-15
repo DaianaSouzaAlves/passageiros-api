@@ -15,13 +15,16 @@ Projeto desenvolvido com Java Spring Boot para gerenciamento de passageiros
 - Validação de dados
 - Tratamento de erros
 - Documentação com Swagger
-- DTOs para entrada e saída de dados  
+- DTOs para entrada e saída de dados
+- Organização em camadas  
 
 ## Como executar
+
 1. Clonar o projeto
-2. Configurar banco de dados
+2. Abra o peojeto na IDE
 3. Executar aplicação
 4. Acessar Swagger
 
 ## Swagger
+
 http://localhost:8080/swagger-ui/index.html
